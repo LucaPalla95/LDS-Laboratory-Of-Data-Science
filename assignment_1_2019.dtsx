@@ -1,0 +1,2504 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/3/2022 5:37:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-HGTMFL6U"
+  DTS:CreatorName="LAPTOP-HGTMFL6U\lpall"
+  DTS:DTSID="{59939687-43BD-408C-A07A-8B795B9A1894}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="assignment_1_2019"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{532EDE1A-F2D4-400B-997B-16E8516CC7CF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestione connessione file flat 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{36342F21-7F3A-4A25-A710-6A7A6BB95E2C}"
+      DTS:ObjectName="Gestione connessione file flat 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\lpall\source\repos\assignment_0\assignment_1_2019.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GroupId"
+              DTS:DTSID="{9921760C-7F1B-46C9-A0D6-2A79CEC54D03}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="min_date"
+              DTS:DTSID="{2709849B-1CE6-407D-9A1C-8B395485D833}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="max_date"
+              DTS:DTSID="{E8AB0D03-6C27-4BFB-91E2-0A044637A0D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Delta Date (days)"
+              DTS:DTSID="{7650EA91-0219-4A4E-ABD3-7A9E0FB257A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mismatch"
+              DTS:DTSID="{FD8B61C3-645B-47F2-82D0-C17D05245795}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A7CE0736-812A-4CBF-B82A-C2D599F925F9}"
+      DTS:ObjectName="lds.di.unipi.it.Group_21_DB.Group_21">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=lds.di.unipi.it;User ID=Group_21;Initial Catalog=Group_21_DB;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApi2Q6bve006O8U36uBBWkgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABa/x3jVBmoKgH1pZTJiETyPH/6lTSXIy7AXk2mhPzp2AAAAAAOgAAAAAIAACAAAAALyrJXkVglK/7gHgBwDPpNTQsgh4vU2ST+9kYNy7cztSAAAAAUhvvt/KM3CAQa+kM4FraAlHuZRUSckdtuJm6KDN5HbkAAAABNrRugVKarCXhbY0suXw+SXCojnTq26v9Qhqv5/acBswFOVcgQXsKqpYUTm0aiioZLiGU48G2JmvbyN/Shd816</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\assignment_1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Attività Flusso di dati"
+      DTS:DTSID="{19CF209A-3B2D-4696-8B90-22FAF07175CE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="assignment_1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\assignment_1\Carico UserId e OrganizationId"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+              description="Origine OLE DB"
+              name="Carico UserId e OrganizationId"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowset">[Group_21].[Answer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL da eseguire."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variabile che contiene il comando SQL da eseguire."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la modalità utilizzata per accedere al database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mapping tra i parametri nel comando SQL e le variabili."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\assignment_1\Carico UserId e OrganizationId.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB]"
+                  name="Output origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].Columns[UserId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[UserId]"
+                      lineageId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].Columns[UserId]"
+                      name="UserId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].Columns[OrganizationId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[OrganizationId]"
+                      lineageId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].Columns[OrganizationId]"
+                      name="OrganizationId"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[AnswerId]"
+                      dataType="i4"
+                      name="AnswerId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[QuestionId]"
+                      dataType="i4"
+                      name="QuestionId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[UserId]"
+                      dataType="i4"
+                      name="UserId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[OrganizationId]"
+                      dataType="i4"
+                      name="OrganizationId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[DateId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DateId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[SubjectId]"
+                      dataType="i4"
+                      name="SubjectId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[AnswerValue]"
+                      dataType="ui1"
+                      name="AnswerValue" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[CorrectAnswer]"
+                      dataType="ui1"
+                      name="CorrectAnswer" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[IsCorrect]"
+                      dataType="ui1"
+                      name="IsCorrect" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].ExternalColumns[Confidence]"
+                      dataType="ui1"
+                      name="Confidence" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output errori origine OLE DB]"
+                  isErrorOut="true"
+                  name="Output errori origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output errori origine OLE DB].Columns[UserId]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output errori origine OLE DB].Columns[UserId]"
+                      name="UserId" />
+                    <outputColumn
+                      refId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output errori origine OLE DB].Columns[OrganizationId]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output errori origine OLE DB].Columns[OrganizationId]"
+                      name="OrganizationId" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\Date"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+              description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+              name="Date"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Group_21].[date]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [Group_21].[date]) [refTable]
+where [refTable].[DateId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di cache della tabella di ricerca."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se fare riferimento ai metadati in un formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateId" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Day" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                  name="ParameterMap">#{Package\assignment_1\DateOfBirthId.Outputs[Output corrispondenza ricerca].Columns[DateOfBirthId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\assignment_1\Date.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\assignment_1\Date.Inputs[Input ricerca]"
+                  name="Input ricerca">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\Date.Inputs[Input ricerca].Columns[DateOfBirthId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DateOfBirthId"
+                      lineageId="Package\assignment_1\DateOfBirthId.Outputs[Output corrispondenza ricerca].Columns[DateOfBirthId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                          name="JoinToReferenceColumn">DateId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\Date.Outputs[Output corrispondenza ricerca]"
+                  errorOrTruncationOperation="Ricerca"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Output corrispondenza ricerca"
+                  synchronousInputId="Package\assignment_1\Date.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\Date.Outputs[Output corrispondenza ricerca].Columns[Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Copia colonna"
+                      lineageId="Package\assignment_1\Date.Outputs[Output corrispondenza ricerca].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn">Date</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\Date.Outputs[Output nessuna corrispondenza ricerca]"
+                  description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                  exclusionGroup="1"
+                  name="Output nessuna corrispondenza ricerca"
+                  synchronousInputId="Package\assignment_1\Date.Inputs[Input ricerca]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\Date.Outputs[Output errori ricerca]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori ricerca"
+                  synchronousInputId="Package\assignment_1\Date.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\Date.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Date.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_1\Date.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Date.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\DateOfBirthId"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+              description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+              name="DateOfBirthId"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Group_21].[user1]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [Group_21].[user1]) [refTable]
+where [refTable].[UserId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di cache della tabella di ricerca."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se fare riferimento ai metadati in un formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="UserId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DateOfBirthId" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="GeoId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Gender" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                  name="ParameterMap">#{Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].Columns[UserId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\assignment_1\DateOfBirthId.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\assignment_1\DateOfBirthId.Inputs[Input ricerca]"
+                  name="Input ricerca">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\DateOfBirthId.Inputs[Input ricerca].Columns[UserId]"
+                      cachedDataType="i4"
+                      cachedName="UserId"
+                      lineageId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].Columns[UserId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                          name="JoinToReferenceColumn">UserId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\DateOfBirthId.Outputs[Output corrispondenza ricerca]"
+                  errorOrTruncationOperation="Ricerca"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Output corrispondenza ricerca"
+                  synchronousInputId="Package\assignment_1\DateOfBirthId.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\DateOfBirthId.Outputs[Output corrispondenza ricerca].Columns[DateOfBirthId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copia colonna"
+                      length="10"
+                      lineageId="Package\assignment_1\DateOfBirthId.Outputs[Output corrispondenza ricerca].Columns[DateOfBirthId]"
+                      name="DateOfBirthId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn">DateOfBirthId</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\DateOfBirthId.Outputs[Output nessuna corrispondenza ricerca]"
+                  description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                  exclusionGroup="1"
+                  name="Output nessuna corrispondenza ricerca"
+                  synchronousInputId="Package\assignment_1\DateOfBirthId.Inputs[Input ricerca]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\DateOfBirthId.Outputs[Output errori ricerca]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori ricerca"
+                  synchronousInputId="Package\assignment_1\DateOfBirthId.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\DateOfBirthId.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\DateOfBirthId.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_1\DateOfBirthId.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\DateOfBirthId.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\Delta Date"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+              name="Delta Date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\assignment_1\Delta Date.Inputs[Input colonna derivata]"
+                  description="Input della trasformazione Colonna derivata"
+                  name="Input colonna derivata">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\Delta Date.Inputs[Input colonna derivata].Columns[min_date]"
+                      cachedDataType="dbDate"
+                      cachedName="min_date"
+                      lineageId="Package\assignment_1\Merge join.Outputs[Output merge join].Columns[min_date]" />
+                    <inputColumn
+                      refId="Package\assignment_1\Delta Date.Inputs[Input colonna derivata].Columns[max_date]"
+                      cachedDataType="dbDate"
+                      cachedName="max_date"
+                      lineageId="Package\assignment_1\Merge join.Outputs[Output merge join].Columns[max_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\Delta Date.Outputs[Output colonna derivata]"
+                  description="Output predefinito della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  name="Output colonna derivata"
+                  synchronousInputId="Package\assignment_1\Delta Date.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\Delta Date.Outputs[Output colonna derivata].Columns[Delta Date (days)]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcolo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\assignment_1\Delta Date.Outputs[Output colonna derivata].Columns[Delta Date (days)]"
+                      name="Delta Date (days)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione colonna derivata"
+                          name="Expression">[DATEDIFF]("dd",(DT_DBDATE)#{Package\assignment_1\Merge join.Outputs[Output merge join].Columns[min_date]},(DT_DBDATE)#{Package\assignment_1\Merge join.Outputs[Output merge join].Columns[max_date]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione descrittiva colonna derivata"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEDIFF("dd",(DT_DBDATE)min_date,(DT_DBDATE)max_date)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\Delta Date.Outputs[Output errori colonna derivata]"
+                  description="Output degli errori della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori colonna derivata"
+                  synchronousInputId="Package\assignment_1\Delta Date.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\Delta Date.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Delta Date.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_1\Delta Date.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Delta Date.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\GroupId"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+              description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+              name="GroupId"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Group_21].[organization]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [Group_21].[organization]) [refTable]
+where [refTable].[OrganizationId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di cache della tabella di ricerca."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se fare riferimento ai metadati in un formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="OrganizationId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GroupId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="QuizId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchemeOfWorkId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                  name="ParameterMap">#{Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].Columns[OrganizationId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\assignment_1\GroupId.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\assignment_1\GroupId.Inputs[Input ricerca]"
+                  name="Input ricerca">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\GroupId.Inputs[Input ricerca].Columns[OrganizationId]"
+                      cachedDataType="i4"
+                      cachedName="OrganizationId"
+                      lineageId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB].Columns[OrganizationId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                          name="JoinToReferenceColumn">OrganizationId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\GroupId.Outputs[Output corrispondenza ricerca]"
+                  errorOrTruncationOperation="Ricerca"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Output corrispondenza ricerca"
+                  synchronousInputId="Package\assignment_1\GroupId.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\GroupId.Outputs[Output corrispondenza ricerca].Columns[GroupId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copia colonna"
+                      lineageId="Package\assignment_1\GroupId.Outputs[Output corrispondenza ricerca].Columns[GroupId]"
+                      name="GroupId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn">GroupId</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\GroupId.Outputs[Output nessuna corrispondenza ricerca]"
+                  description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                  exclusionGroup="1"
+                  name="Output nessuna corrispondenza ricerca"
+                  synchronousInputId="Package\assignment_1\GroupId.Inputs[Input ricerca]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\GroupId.Outputs[Output errori ricerca]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori ricerca"
+                  synchronousInputId="Package\assignment_1\GroupId.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\GroupId.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\GroupId.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_1\GroupId.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\GroupId.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\groupId - max date"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordinamento;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Ordina i dati di input in ordine crescente o decrescente quando non possono essere ordinati come la relativa origine. Ad esempio, ordinare i dati delle vendite per 'customer id' prima che vengano scritti in un file flat e recapitati a un altro reparto. Nota: questa trasformazione non è consigliata per i flussi di dati di grandi dimensioni."
+              name="groupId - max date"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se la trasformazione Ordinamento rimuove le righe con valori di ordinamento duplicati."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero massimo di thread da utilizzare per l'ordinamento."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\assignment_1\groupId - max date.Inputs[Input ordinamento]"
+                  name="Input ordinamento">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\groupId - max date.Inputs[Input ordinamento].Columns[GroupId]"
+                      cachedDataType="i4"
+                      cachedName="GroupId"
+                      lineageId="Package\assignment_1\max date per GroupId.Outputs[Output aggregazione 1].Columns[GroupId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\assignment_1\groupId - max date.Inputs[Input ordinamento].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      lineageId="Package\assignment_1\max date per GroupId.Outputs[Output aggregazione 1].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\groupId - max date.Outputs[Output ordinamento]"
+                  isSorted="true"
+                  name="Output ordinamento">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\groupId - max date.Outputs[Output ordinamento].Columns[GroupId]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\groupId - max date.Outputs[Output ordinamento].Columns[GroupId]"
+                      name="GroupId"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\assignment_1\max date per GroupId.Outputs[Output aggregazione 1].Columns[GroupId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_1\groupId - max date.Outputs[Output ordinamento].Columns[Date]"
+                      dataType="dbDate"
+                      lineageId="Package\assignment_1\groupId - max date.Outputs[Output ordinamento].Columns[Date]"
+                      name="Date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\assignment_1\max date per GroupId.Outputs[Output aggregazione 1].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\groupid - min date"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordinamento;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Ordina i dati di input in ordine crescente o decrescente quando non possono essere ordinati come la relativa origine. Ad esempio, ordinare i dati delle vendite per 'customer id' prima che vengano scritti in un file flat e recapitati a un altro reparto. Nota: questa trasformazione non è consigliata per i flussi di dati di grandi dimensioni."
+              name="groupid - min date"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se la trasformazione Ordinamento rimuove le righe con valori di ordinamento duplicati."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero massimo di thread da utilizzare per l'ordinamento."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\assignment_1\groupid - min date.Inputs[Input ordinamento]"
+                  name="Input ordinamento">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\groupid - min date.Inputs[Input ordinamento].Columns[GroupId]"
+                      cachedDataType="i4"
+                      cachedName="GroupId"
+                      lineageId="Package\assignment_1\min date per GroupId.Outputs[Output aggregazione 1].Columns[GroupId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\assignment_1\groupid - min date.Inputs[Input ordinamento].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      lineageId="Package\assignment_1\min date per GroupId.Outputs[Output aggregazione 1].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\groupid - min date.Outputs[Output ordinamento]"
+                  isSorted="true"
+                  name="Output ordinamento">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\groupid - min date.Outputs[Output ordinamento].Columns[GroupId]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\groupid - min date.Outputs[Output ordinamento].Columns[GroupId]"
+                      name="GroupId"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\assignment_1\min date per GroupId.Outputs[Output aggregazione 1].Columns[GroupId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_1\groupid - min date.Outputs[Output ordinamento].Columns[Date]"
+                      dataType="dbDate"
+                      lineageId="Package\assignment_1\groupid - min date.Outputs[Output ordinamento].Columns[Date]"
+                      name="Date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\assignment_1\min date per GroupId.Outputs[Output aggregazione 1].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\max date per GroupId"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregazione;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;3"
+              description="Aggrega i dati con funzioni quali Media, Somma, Conta numeri, Max e Min. Ad esempio, raggruppare i dati per calcolare la somma delle vendite per prodotto o la media giornaliera delle visite."
+              name="max date per GroupId"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Se si specifica un valore CountDistinctScale, il valore in CountDistinctKeys ha la precedenza."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale di estensione della memoria consentita durante l'aggregazione. I valori validi sono compresi tra 1 e 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\assignment_1\max date per GroupId.Inputs[Input aggregazione 1]"
+                  name="Input aggregazione 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\max date per GroupId.Inputs[Input aggregazione 1].Columns[GroupId]"
+                      cachedDataType="i4"
+                      cachedName="GroupId"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[GroupId]" />
+                    <inputColumn
+                      refId="Package\assignment_1\max date per GroupId.Inputs[Input aggregazione 1].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\max date per GroupId.Outputs[Output aggregazione 1]"
+                  name="Output aggregazione 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\max date per GroupId.Outputs[Output aggregazione 1].Columns[GroupId]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\max date per GroupId.Outputs[Output aggregazione 1].Columns[GroupId]"
+                      name="GroupId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[GroupId]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_1\max date per GroupId.Outputs[Output aggregazione 1].Columns[Date]"
+                      dataType="dbDate"
+                      lineageId="Package\assignment_1\max date per GroupId.Outputs[Output aggregazione 1].Columns[Date]"
+                      name="Date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[Date]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">7</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\Merge join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Combina due flussi di dati ordinati in uno solo tramite join di tipo FULL, LEFT o INNER. Questa trasformazione è consigliata quando i flussi di dati possono essere ordinati alle relative origini."
+              name="Merge join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di join da eseguire."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero di colonne nella chiave di ordinamento."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se i valori Null vengono considerati come valori uguali."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indica il numero massimo di buffer richiesti per input prima dell'attivazione del blocco."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\assignment_1\Merge join.Inputs[Input merge join sinistro]"
+                  hasSideEffects="true"
+                  name="Input merge join sinistro">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\Merge join.Inputs[Input merge join sinistro].Columns[GroupId]"
+                      cachedDataType="i4"
+                      cachedName="GroupId"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\assignment_1\groupid - min date.Outputs[Output ordinamento].Columns[GroupId]" />
+                    <inputColumn
+                      refId="Package\assignment_1\Merge join.Inputs[Input merge join sinistro].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      lineageId="Package\assignment_1\groupid - min date.Outputs[Output ordinamento].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\assignment_1\Merge join.Inputs[Input merge join destro]"
+                  hasSideEffects="true"
+                  name="Input merge join destro">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\Merge join.Inputs[Input merge join destro].Columns[GroupId]"
+                      cachedDataType="i4"
+                      cachedName="GroupId"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\assignment_1\groupId - max date.Outputs[Output ordinamento].Columns[GroupId]" />
+                    <inputColumn
+                      refId="Package\assignment_1\Merge join.Inputs[Input merge join destro].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      lineageId="Package\assignment_1\groupId - max date.Outputs[Output ordinamento].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\Merge join.Outputs[Output merge join]"
+                  isSorted="true"
+                  name="Output merge join">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\Merge join.Outputs[Output merge join].Columns[GroupId]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Merge join.Outputs[Output merge join].Columns[GroupId]"
+                      name="GroupId"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonna di input associata a questa colonna di output"
+                          name="InputColumnID">#{Package\assignment_1\Merge join.Inputs[Input merge join destro].Columns[GroupId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_1\Merge join.Outputs[Output merge join].Columns[min_date]"
+                      dataType="dbDate"
+                      lineageId="Package\assignment_1\Merge join.Outputs[Output merge join].Columns[min_date]"
+                      name="min_date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonna di input associata a questa colonna di output"
+                          name="InputColumnID">#{Package\assignment_1\Merge join.Inputs[Input merge join sinistro].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_1\Merge join.Outputs[Output merge join].Columns[max_date]"
+                      dataType="dbDate"
+                      lineageId="Package\assignment_1\Merge join.Outputs[Output merge join].Columns[max_date]"
+                      name="max_date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonna di input associata a questa colonna di output"
+                          name="InputColumnID">#{Package\assignment_1\Merge join.Inputs[Input merge join destro].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\min date per GroupId"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregazione;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;3"
+              description="Aggrega i dati con funzioni quali Media, Somma, Conta numeri, Max e Min. Ad esempio, raggruppare i dati per calcolare la somma delle vendite per prodotto o la media giornaliera delle visite."
+              name="min date per GroupId"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Se si specifica un valore CountDistinctScale, il valore in CountDistinctKeys ha la precedenza."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale di estensione della memoria consentita durante l'aggregazione. I valori validi sono compresi tra 1 e 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\assignment_1\min date per GroupId.Inputs[Input aggregazione 1]"
+                  name="Input aggregazione 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\min date per GroupId.Inputs[Input aggregazione 1].Columns[GroupId]"
+                      cachedDataType="i4"
+                      cachedName="GroupId"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[GroupId]" />
+                    <inputColumn
+                      refId="Package\assignment_1\min date per GroupId.Inputs[Input aggregazione 1].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\min date per GroupId.Outputs[Output aggregazione 1]"
+                  name="Output aggregazione 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\min date per GroupId.Outputs[Output aggregazione 1].Columns[GroupId]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\min date per GroupId.Outputs[Output aggregazione 1].Columns[GroupId]"
+                      name="GroupId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[GroupId]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_1\min date per GroupId.Outputs[Output aggregazione 1].Columns[Date]"
+                      dataType="dbDate"
+                      lineageId="Package\assignment_1\min date per GroupId.Outputs[Output aggregazione 1].Columns[Date]"
+                      name="Date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[Date]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">6</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\Mismatch"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+              name="Mismatch"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\assignment_1\Mismatch.Inputs[Input colonna derivata]"
+                  description="Input della trasformazione Colonna derivata"
+                  name="Input colonna derivata">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\Mismatch.Inputs[Input colonna derivata].Columns[Delta Date (days)]"
+                      cachedDataType="i4"
+                      cachedName="Delta Date (days)"
+                      lineageId="Package\assignment_1\Delta Date.Outputs[Output colonna derivata].Columns[Delta Date (days)]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\Mismatch.Outputs[Output colonna derivata]"
+                  description="Output predefinito della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  name="Output colonna derivata"
+                  synchronousInputId="Package\assignment_1\Mismatch.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\Mismatch.Outputs[Output colonna derivata].Columns[Mismatch]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcolo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\assignment_1\Mismatch.Outputs[Output colonna derivata].Columns[Mismatch]"
+                      name="Mismatch"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione colonna derivata"
+                          name="Expression">#{Package\assignment_1\Delta Date.Outputs[Output colonna derivata].Columns[Delta Date (days)]} &gt; 365 ? 1 : 0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione descrittiva colonna derivata"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[Delta Date (days)] &gt; 365 ? 1 : 0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\Mismatch.Outputs[Output errori colonna derivata]"
+                  description="Output degli errori della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori colonna derivata"
+                  synchronousInputId="Package\assignment_1\Mismatch.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\Mismatch.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Mismatch.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_1\Mismatch.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Mismatch.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\mismatch file"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destinazione file flat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Destinazione file flat"
+              localeId="1033"
+              name="mismatch file"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifica se i dati verranno sovrascritti o accodati nel file di destinazione."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il testo da scrivere nel file di destinazione prima della scrittura dei dati."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quando il qualificatore di testo è abilitato, specifica se il qualificatore di testo nei dati scritti nel file di destinazione verrà o meno preceduto da un carattere di escape."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\assignment_1\mismatch file.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Gestione connessione file flat 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Gestione connessione file flat 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat]"
+                  hasSideEffects="true"
+                  name="Input destinazione file flat">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].Columns[GroupId]"
+                      cachedDataType="i4"
+                      cachedName="GroupId"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].ExternalColumns[GroupId]"
+                      lineageId="Package\assignment_1\Merge join.Outputs[Output merge join].Columns[GroupId]" />
+                    <inputColumn
+                      refId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].Columns[min_date]"
+                      cachedDataType="dbDate"
+                      cachedName="min_date"
+                      externalMetadataColumnId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].ExternalColumns[min_date]"
+                      lineageId="Package\assignment_1\Merge join.Outputs[Output merge join].Columns[min_date]" />
+                    <inputColumn
+                      refId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].Columns[max_date]"
+                      cachedDataType="dbDate"
+                      cachedName="max_date"
+                      externalMetadataColumnId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].ExternalColumns[max_date]"
+                      lineageId="Package\assignment_1\Merge join.Outputs[Output merge join].Columns[max_date]" />
+                    <inputColumn
+                      refId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].Columns[Delta Date (days)]"
+                      cachedDataType="i4"
+                      cachedName="Delta Date (days)"
+                      externalMetadataColumnId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].ExternalColumns[Delta Date (days)]"
+                      lineageId="Package\assignment_1\Delta Date.Outputs[Output colonna derivata].Columns[Delta Date (days)]" />
+                    <inputColumn
+                      refId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].Columns[Mismatch]"
+                      cachedDataType="i4"
+                      cachedName="Mismatch"
+                      externalMetadataColumnId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].ExternalColumns[Mismatch]"
+                      lineageId="Package\assignment_1\Mismatch.Outputs[Output colonna derivata].Columns[Mismatch]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].ExternalColumns[GroupId]"
+                      dataType="i4"
+                      name="GroupId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].ExternalColumns[min_date]"
+                      dataType="dbDate"
+                      name="min_date" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].ExternalColumns[max_date]"
+                      dataType="dbDate"
+                      name="max_date" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].ExternalColumns[Delta Date (days)]"
+                      dataType="i4"
+                      name="Delta Date (days)" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat].ExternalColumns[Mismatch]"
+                      dataType="i4"
+                      name="Mismatch" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\assignment_1\Mismatch sì, mismatch no"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Suddivisione condizionale;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Indirizza righe di dati a output diversi a seconda del contenuto dei dati. Usare le condizioni (espressioni SSIS) per specificare le righe da indirizzare. Ad esempio, separare i record da eliminare da quelli pronti per essere caricati oppure indirizzare unicamente un subset di record."
+              name="Mismatch sì, mismatch no"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\assignment_1\Mismatch sì, mismatch no.Inputs[Input suddivisione condizionale]"
+                  description="Input della trasformazione Suddivisione condizionale"
+                  name="Input suddivisione condizionale">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\Mismatch sì, mismatch no.Inputs[Input suddivisione condizionale].Columns[Mismatch]"
+                      cachedDataType="i4"
+                      cachedName="Mismatch"
+                      lineageId="Package\assignment_1\Mismatch.Outputs[Output colonna derivata].Columns[Mismatch]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\Mismatch sì, mismatch no.Outputs[Mismatch]"
+                  description="Output 1 della trasformazione Suddivisione condizionale"
+                  errorOrTruncationOperation="Calcolo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Mismatch"
+                  synchronousInputId="Package\assignment_1\Mismatch sì, mismatch no.Inputs[Input suddivisione condizionale]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica l'espressione. Questa versione dell'espressione utilizza gli identificatori di derivazione anziché i nomi di colonna."
+                      name="Expression">#{Package\assignment_1\Mismatch.Outputs[Output colonna derivata].Columns[Mismatch]} == 1</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica la versione descrittiva dell'espressione. Questa versione dell'espressione utilizza i nomi di colonna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Mismatch == 1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la posizione della condizione nell'elenco delle condizioni valutate dalla trasformazione. L'ordine di valutazione è crescente, dal valore più basso al più alto."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\Mismatch sì, mismatch no.Outputs[No Mismatch]"
+                  description="Output predefinito per la trasformazione Suddivisione condizionale"
+                  exclusionGroup="1"
+                  name="No Mismatch"
+                  synchronousInputId="Package\assignment_1\Mismatch sì, mismatch no.Inputs[Input suddivisione condizionale]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\Mismatch sì, mismatch no.Outputs[Output errori suddivisione condizionale]"
+                  description="Output degli errori per la trasformazione Suddivisione condizionale"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori suddivisione condizionale"
+                  synchronousInputId="Package\assignment_1\Mismatch sì, mismatch no.Inputs[Input suddivisione condizionale]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\Mismatch sì, mismatch no.Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Mismatch sì, mismatch no.Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_1\Mismatch sì, mismatch no.Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Mismatch sì, mismatch no.Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Distribuisce ogni riga di input a ogni riga di uno o più output. Ad esempio, creare un nuovo ramo del flusso di dati per creare una copia dei dati in modo che sia possibile mascherare alcuni valori prima di condividerli con partner esterni."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\assignment_1\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\assignment_1\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\Multicast.Outputs[Output multicast 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Output multicast 1"
+                  synchronousInputId="Package\assignment_1\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_1\Multicast.Outputs[Output multicast 2]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Output multicast 2"
+                  synchronousInputId="Package\assignment_1\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordinamento;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Ordina i dati di input in ordine crescente o decrescente quando non possono essere ordinati come la relativa origine. Ad esempio, ordinare i dati delle vendite per 'customer id' prima che vengano scritti in un file flat e recapitati a un altro reparto. Nota: questa trasformazione non è consigliata per i flussi di dati di grandi dimensioni."
+              name="Ordinati e unici GroupId e DateOfBirthId"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se la trasformazione Ordinamento rimuove le righe con valori di ordinamento duplicati."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero massimo di thread da utilizzare per l'ordinamento."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Inputs[Input ordinamento]"
+                  name="Input ordinamento">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Inputs[Input ordinamento].Columns[GroupId]"
+                      cachedDataType="i4"
+                      cachedName="GroupId"
+                      lineageId="Package\assignment_1\GroupId.Outputs[Output corrispondenza ricerca].Columns[GroupId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Inputs[Input ordinamento].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      lineageId="Package\assignment_1\Date.Outputs[Output corrispondenza ricerca].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento]"
+                  isSorted="true"
+                  name="Output ordinamento">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[GroupId]"
+                      dataType="i4"
+                      lineageId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[GroupId]"
+                      name="GroupId"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\assignment_1\GroupId.Outputs[Output corrispondenza ricerca].Columns[GroupId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[Date]"
+                      dataType="dbDate"
+                      lineageId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento].Columns[Date]"
+                      name="Date"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\assignment_1\Date.Outputs[Output corrispondenza ricerca].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\assignment_1.Paths[Mismatch]"
+              endId="Package\assignment_1\mismatch file.Inputs[Input destinazione file flat]"
+              name="Mismatch"
+              startId="Package\assignment_1\Mismatch sì, mismatch no.Outputs[Mismatch]" />
+            <path
+              refId="Package\assignment_1.Paths[Multicast Output 1]"
+              endId="Package\assignment_1\min date per GroupId.Inputs[Input aggregazione 1]"
+              name="Multicast Output 1"
+              startId="Package\assignment_1\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\assignment_1.Paths[Output aggregazione 1]"
+              endId="Package\assignment_1\groupId - max date.Inputs[Input ordinamento]"
+              name="Output aggregazione 1"
+              startId="Package\assignment_1\max date per GroupId.Outputs[Output aggregazione 1]" />
+            <path
+              refId="Package\assignment_1.Paths[Output aggregazione 11]"
+              endId="Package\assignment_1\groupid - min date.Inputs[Input ordinamento]"
+              name="Output aggregazione 1"
+              startId="Package\assignment_1\min date per GroupId.Outputs[Output aggregazione 1]" />
+            <path
+              refId="Package\assignment_1.Paths[Output colonna derivata]"
+              endId="Package\assignment_1\Mismatch sì, mismatch no.Inputs[Input suddivisione condizionale]"
+              name="Output colonna derivata"
+              startId="Package\assignment_1\Mismatch.Outputs[Output colonna derivata]" />
+            <path
+              refId="Package\assignment_1.Paths[Output colonna derivata1]"
+              endId="Package\assignment_1\Mismatch.Inputs[Input colonna derivata]"
+              name="Output colonna derivata"
+              startId="Package\assignment_1\Delta Date.Outputs[Output colonna derivata]" />
+            <path
+              refId="Package\assignment_1.Paths[Output corrispondenza ricerca]"
+              endId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Inputs[Input ordinamento]"
+              name="Output corrispondenza ricerca"
+              startId="Package\assignment_1\Date.Outputs[Output corrispondenza ricerca]" />
+            <path
+              refId="Package\assignment_1.Paths[Output corrispondenza ricerca1]"
+              endId="Package\assignment_1\Date.Inputs[Input ricerca]"
+              name="Output corrispondenza ricerca"
+              startId="Package\assignment_1\DateOfBirthId.Outputs[Output corrispondenza ricerca]" />
+            <path
+              refId="Package\assignment_1.Paths[Output corrispondenza ricerca2]"
+              endId="Package\assignment_1\DateOfBirthId.Inputs[Input ricerca]"
+              name="Output corrispondenza ricerca"
+              startId="Package\assignment_1\GroupId.Outputs[Output corrispondenza ricerca]" />
+            <path
+              refId="Package\assignment_1.Paths[Output merge join]"
+              endId="Package\assignment_1\Delta Date.Inputs[Input colonna derivata]"
+              name="Output merge join"
+              startId="Package\assignment_1\Merge join.Outputs[Output merge join]" />
+            <path
+              refId="Package\assignment_1.Paths[Output multicast 1]"
+              endId="Package\assignment_1\max date per GroupId.Inputs[Input aggregazione 1]"
+              name="Output multicast 1"
+              startId="Package\assignment_1\Multicast.Outputs[Output multicast 1]" />
+            <path
+              refId="Package\assignment_1.Paths[Output ordinamento]"
+              endId="Package\assignment_1\Merge join.Inputs[Input merge join destro]"
+              name="Output ordinamento"
+              startId="Package\assignment_1\groupId - max date.Outputs[Output ordinamento]" />
+            <path
+              refId="Package\assignment_1.Paths[Output ordinamento1]"
+              endId="Package\assignment_1\Merge join.Inputs[Input merge join sinistro]"
+              name="Output ordinamento"
+              startId="Package\assignment_1\groupid - min date.Outputs[Output ordinamento]" />
+            <path
+              refId="Package\assignment_1.Paths[Output ordinamento2]"
+              endId="Package\assignment_1\Multicast.Inputs[Multicast Input 1]"
+              name="Output ordinamento"
+              startId="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId.Outputs[Output ordinamento]" />
+            <path
+              refId="Package\assignment_1.Paths[Output origine OLE DB]"
+              endId="Package\assignment_1\GroupId.Inputs[Input ricerca]"
+              name="Output origine OLE DB"
+              startId="Package\assignment_1\Carico UserId e OrganizationId.Outputs[Output origine OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\assignment_1"
+          TopLeft="326.428576987617,40.5294123331156" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\assignment_1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\assignment_1\max date per GroupId"
+          TopLeft="568.071437317498,379.458825395511" />
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\assignment_1\mismatch file"
+          TopLeft="328.785718956772,827.305885967169" />
+        <NodeLayout
+          Size="100.8,41.6"
+          Id="Package\assignment_1\Date"
+          TopLeft="605.000009281294,155.616232043885" />
+        <NodeLayout
+          Size="268.8,41.6"
+          Id="Package\assignment_1\Ordinati e unici GroupId e DateOfBirthId"
+          TopLeft="255.214289132429,231.294120049394" />
+        <NodeLayout
+          Size="128,41.6"
+          Id="Package\assignment_1\Merge join"
+          TopLeft="350.71429066512,565.405883597008" />
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\assignment_1\Carico UserId e OrganizationId"
+          TopLeft="283.785718190426,60" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\assignment_1\Mismatch"
+          TopLeft="498.071436125405,647.435296477084" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\assignment_1\Multicast"
+          TopLeft="332.857147503872,304.133935747331" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\assignment_1\groupid - min date"
+          TopLeft="219.500002809933,460.635297571004" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\assignment_1\DateOfBirthId"
+          TopLeft="308.571432293678,156.676471446212" />
+        <NodeLayout
+          Size="116.8,41.6"
+          Id="Package\assignment_1\GroupId"
+          TopLeft="60,150.382354131619" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\assignment_1\Mismatch sì, mismatch no"
+          TopLeft="304.285718445875,735.609519535418" />
+        <NodeLayout
+          Size="128,41.6"
+          Id="Package\assignment_1\Delta Date"
+          TopLeft="203.071431101585,643.105885784849" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\assignment_1\groupId - max date"
+          TopLeft="463.571435444209,462.079580480345" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\assignment_1\min date per GroupId"
+          TopLeft="87.85714282065,380.780995225068" />
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output origine OLE DB]"
+          TopLeft="395.385718190427,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-276.985718190427,48.7823541316194"
+              Start="0,0"
+              End="-276.985718190427,41.2823541316194">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3911770658097" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3911770658097"
+                    Point2="0,24.3911770658097"
+                    Point3="-4,24.3911770658097" />
+                  <mssgle:LineSegment
+                    End="-272.985718190427,24.3911770658097" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-272.985718190427,24.3911770658097"
+                    Point2="-276.985718190427,24.3911770658097"
+                    Point3="-276.985718190427,28.3911770658097" />
+                  <mssgle:LineSegment
+                    End="-276.985718190427,41.2823541316194" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output ordinamento2]"
+          TopLeft="391.23571831815,272.894120049394">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.239815697937"
+              Start="0,0"
+              End="0,23.739815697937">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.739815697937" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output ordinamento1]"
+          TopLeft="302.700002809933,502.235297571004">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.014287855187,63.170586026004"
+              Start="0,0"
+              End="92.014287855187,55.670586026004">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.4344213487431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.4344213487431"
+                    Point2="0,37.4344213487431"
+                    Point3="4,37.4344213487431" />
+                  <mssgle:LineSegment
+                    End="88.014287855187,37.4344213487431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.014287855187,37.4344213487431"
+                    Point2="92.014287855187,37.4344213487431"
+                    Point3="92.014287855187,41.4344213487431" />
+                  <mssgle:LineSegment
+                    End="92.014287855187,55.670586026004" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output ordinamento]"
+          TopLeft="548.771435444209,503.679580480345">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-114.057144779089,61.726303116663"
+              Start="0,0"
+              End="-114.057144779089,54.226303116663">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5785499950596" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.5785499950596"
+                    Point2="0,36.5785499950596"
+                    Point3="-4,36.5785499950596" />
+                  <mssgle:LineSegment
+                    End="-110.057144779089,36.5785499950596" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-110.057144779089,36.5785499950596"
+                    Point2="-114.057144779089,36.5785499950596"
+                    Point3="-114.057144779089,40.5785499950596" />
+                  <mssgle:LineSegment
+                    End="-114.057144779089,54.226303116663" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output multicast 1]"
+          TopLeft="411.523814170539,345.733935747331">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="247.747623146959,33.7248896481806"
+              Start="0,0"
+              End="247.747623146959,26.2248896481806">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.75620498807368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.75620498807368"
+                    Point2="0,13.7562049880737"
+                    Point3="4,13.7562049880737" />
+                  <mssgle:LineSegment
+                    End="243.747623146959,13.7562049880737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="243.747623146959,13.7562049880737"
+                    Point2="247.747623146959,13.7562049880737"
+                    Point3="247.747623146959,17.7562049880737" />
+                  <mssgle:LineSegment
+                    End="247.747623146959,26.2248896481806" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output merge join]"
+          TopLeft="414.71429066512,607.005883597008">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-147.642859563535,36.1000021878409"
+              Start="0,0"
+              End="-147.642859563535,28.6000021878409">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.0500010939205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.0500010939205"
+                    Point2="0,18.0500010939205"
+                    Point3="-4,18.0500010939205" />
+                  <mssgle:LineSegment
+                    End="-143.642859563535,18.0500010939205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-143.642859563535,18.0500010939205"
+                    Point2="-147.642859563535,18.0500010939205"
+                    Point3="-147.642859563535,22.0500010939205" />
+                  <mssgle:LineSegment
+                    End="-147.642859563535,28.6000021878409" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output corrispondenza ricerca2]"
+          TopLeft="176.799999999999,174.329412788916">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="131.771432293678,0"
+              Start="0,0"
+              End="124.271432293678,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="124.271432293678,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.65016275941099,5,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output corrispondenza ricerca1]"
+          TopLeft="451.771432293678,176.946351745049">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="153.228576987617,0"
+              Start="0,0"
+              End="145.728576987617,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="145.728576987617,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.07840958755851,5,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output corrispondenza ricerca]"
+          TopLeft="655.400009281294,197.216232043885">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-265.785720148865,34.077888005509"
+              Start="0,0"
+              End="-265.785720148865,26.577888005509">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.0389440027545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.0389440027545"
+                    Point2="0,17.0389440027545"
+                    Point3="-4,17.0389440027545" />
+                  <mssgle:LineSegment
+                    End="-261.785720148865,17.0389440027545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-261.785720148865,17.0389440027545"
+                    Point2="-265.785720148865,17.0389440027545"
+                    Point3="-265.785720148865,21.0389440027545" />
+                  <mssgle:LineSegment
+                    End="-265.785720148865,26.577888005509" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-199.678738980682,22.0389440027545,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output colonna derivata1]"
+          TopLeft="331.071431101585,666.070591130966">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="167.00000502382,0"
+              Start="0,0"
+              End="159.50000502382,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="159.50000502382,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output colonna derivata]"
+          TopLeft="559.671436125405,689.035296477084">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-155.38571767953,46.5742230583342"
+              Start="0,0"
+              End="-155.38571767953,39.0742230583342">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.2871115291671" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.2871115291671"
+                    Point2="0,23.2871115291671"
+                    Point3="-4,23.2871115291671" />
+                  <mssgle:LineSegment
+                    End="-151.38571767953,23.2871115291671" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-151.38571767953,23.2871115291671"
+                    Point2="-155.38571767953,23.2871115291671"
+                    Point3="-155.38571767953,27.2871115291671" />
+                  <mssgle:LineSegment
+                    End="-155.38571767953,39.0742230583342" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output aggregazione 11]"
+          TopLeft="177.85714282065,422.380995225068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.842859989283,38.254302345936"
+              Start="0,0"
+              End="124.842859989283,30.754302345936">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.127151172968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.127151172968"
+                    Point2="0,19.127151172968"
+                    Point3="4,19.127151172968" />
+                  <mssgle:LineSegment
+                    End="120.842859989283,19.127151172968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.842859989283,19.127151172968"
+                    Point2="124.842859989283,19.127151172968"
+                    Point3="124.842859989283,23.127151172968" />
+                  <mssgle:LineSegment
+                    End="124.842859989283,30.754302345936" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Output aggregazione 1]"
+          TopLeft="659.271437317498,421.058825395511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-110.500001873289,41.020755084834"
+              Start="0,0"
+              End="-110.500001873289,33.520755084834">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.510377542417" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.510377542417"
+                    Point2="0,20.510377542417"
+                    Point3="-4,20.510377542417" />
+                  <mssgle:LineSegment
+                    End="-106.500001873289,20.510377542417" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-106.500001873289,20.510377542417"
+                    Point2="-110.500001873289,20.510377542417"
+                    Point3="-110.500001873289,24.510377542417" />
+                  <mssgle:LineSegment
+                    End="-110.500001873289,33.520755084834" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Multicast Output 1]"
+          TopLeft="374.190480837205,345.733935747331">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-196.333338016555,35.0470594777368"
+              Start="0,0"
+              End="-196.333338016555,27.5470594777368">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.2955111027611" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.2955111027611"
+                    Point2="0,14.2955111027611"
+                    Point3="-4,14.2955111027611" />
+                  <mssgle:LineSegment
+                    End="-192.333338016555,14.2955111027611" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-192.333338016555,14.2955111027611"
+                    Point2="-196.333338016555,14.2955111027611"
+                    Point3="-196.333338016555,18.2955111027611" />
+                  <mssgle:LineSegment
+                    End="-196.333338016555,27.5470594777368" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_1.Paths[Mismatch]"
+          TopLeft="401.735718701323,777.209519535418">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.0963664317511"
+              Start="0,0"
+              End="0,42.5963664317511">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5963664317511" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.0055859375,13.2981832158756,42.2738671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\assignment_1\Date">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_21].[date]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\assignment_1\Carico UserId e OrganizationId">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\assignment_1\DateOfBirthId">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_21].[user1]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\assignment_1\GroupId">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_21].[organization]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

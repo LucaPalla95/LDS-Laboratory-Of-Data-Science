@@ -1,0 +1,2092 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/4/2022 10:02:14 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-HGTMFL6U"
+  DTS:CreatorName="LAPTOP-HGTMFL6U\lpall"
+  DTS:DTSID="{DCA50651-FF3D-4BD0-A1C0-A6D5902A3E50}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{2EF08A72-C52E-4759-A9C0-C6AAC4FF713F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BF293414-DC06-4711-900F-F4DA6115B047}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\lpall\source\repos\assignment_0\assignemnt_21_2019.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Continent"
+              DTS:DTSID="{01ED31DA-16DE-40DE-AACE-A30E01B9490C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IsCorrect_Male"
+              DTS:DTSID="{93B113E9-0F42-45F5-B44B-5A70A795E3E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IsCorrect_Female"
+              DTS:DTSID="{09C1C3C8-A8D5-46AD-A991-17DC3BAD8234}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="38"
+              DTS:DataScale="9"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ratio"
+              DTS:DTSID="{BC72EEDF-48F0-4B3D-A5DA-315A339F144D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A4792012-113F-4DE7-A276-AD4A9BC58939}"
+      DTS:ObjectName="lds.di.unipi.it.Group_21_DB.Group_21">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=lds.di.unipi.it;User ID=Group_21;Initial Catalog=Group_21_DB;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{A4792012-113F-4DE7-A276-AD4A9BC58939}lds.di.unipi.it.Group_21_DB.Group_21;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApi2Q6bve006O8U36uBBWkgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC6oTeBI+p8rdHe0lK7N6SGS+bLIYbSg5LBHpre4TtU2AAAAAAOgAAAAAIAACAAAAD2FOTzAZQhEufehf+8I3b4agacel1zcQDV+oqJ4kXR3SAAAAB8sDXqpEbMKOIB5UP81Ud5dNICK5jrAaihhzaqkLY4LEAAAADgLAcvuA6B8B7f+Pst2vqXU+vbE0ddU+zu5Lq/1bPs+uzESak1Rd+sYCs+QRgu5dv6Hv2eyDaVdIqx7O1IJWSE</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\assignment_2"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Attività Flusso di dati"
+      DTS:DTSID="{1D9CE873-731B-4D47-B320-D1D2DB2C5786}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="assignment_2"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\assignment_2\Continent"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+              description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+              name="Continent"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Group_21].[Geography]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [Group_21].[Geography]) [refTable]
+where [refTable].[GeoId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di cache della tabella di ricerca."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se fare riferimento ai metadati in un formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="GeoId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Region" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CountryCode" dataType="DT_WSTR" length="4" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Continent" dataType="DT_WSTR" length="4" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                  name="ParameterMap">#{Package\assignment_2\GeoId, Gender.Outputs[Output corrispondenza ricerca].Columns[GeoId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\assignment_2\Continent.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\assignment_2\Continent.Inputs[Input ricerca]"
+                  name="Input ricerca">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\Continent.Inputs[Input ricerca].Columns[GeoId]"
+                      cachedDataType="i4"
+                      cachedName="GeoId"
+                      lineageId="Package\assignment_2\GeoId, Gender.Outputs[Output corrispondenza ricerca].Columns[GeoId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                          name="JoinToReferenceColumn">GeoId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_2\Continent.Outputs[Output corrispondenza ricerca]"
+                  errorOrTruncationOperation="Ricerca"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Output corrispondenza ricerca"
+                  synchronousInputId="Package\assignment_2\Continent.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\Continent.Outputs[Output corrispondenza ricerca].Columns[Continent]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copia colonna"
+                      length="4"
+                      lineageId="Package\assignment_2\Continent.Outputs[Output corrispondenza ricerca].Columns[Continent]"
+                      name="Continent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn">Continent</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_2\Continent.Outputs[Output nessuna corrispondenza ricerca]"
+                  description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                  exclusionGroup="1"
+                  name="Output nessuna corrispondenza ricerca"
+                  synchronousInputId="Package\assignment_2\Continent.Inputs[Input ricerca]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_2\Continent.Outputs[Output errori ricerca]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori ricerca"
+                  synchronousInputId="Package\assignment_2\Continent.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\Continent.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\Continent.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_2\Continent.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\Continent.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_2\Correct (1) and No Correct (0)"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Suddivisione condizionale;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Indirizza righe di dati a output diversi a seconda del contenuto dei dati. Usare le condizioni (espressioni SSIS) per specificare le righe da indirizzare. Ad esempio, separare i record da eliminare da quelli pronti per essere caricati oppure indirizzare unicamente un subset di record."
+              name="Correct (1) and No Correct (0)"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\assignment_2\Correct (1) and No Correct (0).Inputs[Input suddivisione condizionale]"
+                  description="Input della trasformazione Suddivisione condizionale"
+                  name="Input suddivisione condizionale">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\Correct (1) and No Correct (0).Inputs[Input suddivisione condizionale].Columns[IsCorrect]"
+                      cachedDataType="ui1"
+                      cachedName="IsCorrect"
+                      lineageId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[IsCorrect]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_2\Correct (1) and No Correct (0).Outputs[Correct]"
+                  description="Output 1 della trasformazione Suddivisione condizionale"
+                  errorOrTruncationOperation="Calcolo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Correct"
+                  synchronousInputId="Package\assignment_2\Correct (1) and No Correct (0).Inputs[Input suddivisione condizionale]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica l'espressione. Questa versione dell'espressione utilizza gli identificatori di derivazione anziché i nomi di colonna."
+                      name="Expression">#{Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[IsCorrect]} == 1</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica la versione descrittiva dell'espressione. Questa versione dell'espressione utilizza i nomi di colonna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">IsCorrect == 1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la posizione della condizione nell'elenco delle condizioni valutate dalla trasformazione. L'ordine di valutazione è crescente, dal valore più basso al più alto."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_2\Correct (1) and No Correct (0).Outputs[No Correct]"
+                  description="Output predefinito per la trasformazione Suddivisione condizionale"
+                  exclusionGroup="1"
+                  name="No Correct"
+                  synchronousInputId="Package\assignment_2\Correct (1) and No Correct (0).Inputs[Input suddivisione condizionale]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_2\Correct (1) and No Correct (0).Outputs[Output errori suddivisione condizionale]"
+                  description="Output degli errori per la trasformazione Suddivisione condizionale"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori suddivisione condizionale"
+                  synchronousInputId="Package\assignment_2\Correct (1) and No Correct (0).Inputs[Input suddivisione condizionale]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\Correct (1) and No Correct (0).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\Correct (1) and No Correct (0).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_2\Correct (1) and No Correct (0).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\Correct (1) and No Correct (0).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_2\GeoId, Gender"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+              description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+              name="GeoId, Gender"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Group_21].[user1]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [Group_21].[user1]) [refTable]
+where [refTable].[UserId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di cache della tabella di ricerca."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se fare riferimento ai metadati in un formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="UserId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DateOfBirthId" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="GeoId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Gender" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                  name="ParameterMap">#{Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[UserId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\assignment_2\GeoId, Gender.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\assignment_2\GeoId, Gender.Inputs[Input ricerca]"
+                  name="Input ricerca">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\GeoId, Gender.Inputs[Input ricerca].Columns[UserId]"
+                      cachedDataType="i4"
+                      cachedName="UserId"
+                      lineageId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[UserId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                          name="JoinToReferenceColumn">UserId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_2\GeoId, Gender.Outputs[Output corrispondenza ricerca]"
+                  errorOrTruncationOperation="Ricerca"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Output corrispondenza ricerca"
+                  synchronousInputId="Package\assignment_2\GeoId, Gender.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\GeoId, Gender.Outputs[Output corrispondenza ricerca].Columns[GeoId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copia colonna"
+                      lineageId="Package\assignment_2\GeoId, Gender.Outputs[Output corrispondenza ricerca].Columns[GeoId]"
+                      name="GeoId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn">GeoId</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_2\GeoId, Gender.Outputs[Output corrispondenza ricerca].Columns[Gender]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Copia colonna"
+                      lineageId="Package\assignment_2\GeoId, Gender.Outputs[Output corrispondenza ricerca].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn">Gender</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_2\GeoId, Gender.Outputs[Output nessuna corrispondenza ricerca]"
+                  description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                  exclusionGroup="1"
+                  name="Output nessuna corrispondenza ricerca"
+                  synchronousInputId="Package\assignment_2\GeoId, Gender.Inputs[Input ricerca]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_2\GeoId, Gender.Outputs[Output errori ricerca]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori ricerca"
+                  synchronousInputId="Package\assignment_2\GeoId, Gender.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\GeoId, Gender.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\GeoId, Gender.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_2\GeoId, Gender.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\GeoId, Gender.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_2\GroupBy Contient, Count Correct 1"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregazione;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;3"
+              description="Aggrega i dati con funzioni quali Media, Somma, Conta numeri, Max e Min. Ad esempio, raggruppare i dati per calcolare la somma delle vendite per prodotto o la media giornaliera delle visite."
+              name="GroupBy Contient, Count Correct 1"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Se si specifica un valore CountDistinctScale, il valore in CountDistinctKeys ha la precedenza."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale di estensione della memoria consentita durante l'aggregazione. I valori validi sono compresi tra 1 e 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\assignment_2\GroupBy Contient, Count Correct 1.Inputs[Input aggregazione 1]"
+                  name="Input aggregazione 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\GroupBy Contient, Count Correct 1.Inputs[Input aggregazione 1].Columns[Continent]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="Continent"
+                      lineageId="Package\assignment_2\Continent.Outputs[Output corrispondenza ricerca].Columns[Continent]" />
+                    <inputColumn
+                      refId="Package\assignment_2\GroupBy Contient, Count Correct 1.Inputs[Input aggregazione 1].Columns[IsCorrect]"
+                      cachedDataType="ui1"
+                      cachedName="IsCorrect"
+                      lineageId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[IsCorrect]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_2\GroupBy Contient, Count Correct 1.Outputs[Output aggregazione 1]"
+                  name="Output aggregazione 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\GroupBy Contient, Count Correct 1.Outputs[Output aggregazione 1].Columns[Continent]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\assignment_2\GroupBy Contient, Count Correct 1.Outputs[Output aggregazione 1].Columns[Continent]"
+                      name="Continent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\assignment_2\Continent.Outputs[Output corrispondenza ricerca].Columns[Continent]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_2\GroupBy Contient, Count Correct 1.Outputs[Output aggregazione 1].Columns[IsCorrect]"
+                      dataType="ui8"
+                      lineageId="Package\assignment_2\GroupBy Contient, Count Correct 1.Outputs[Output aggregazione 1].Columns[IsCorrect]"
+                      name="IsCorrect">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[IsCorrect]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_2\GroupBy Continent, Count Correct"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregazione;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;3"
+              description="Aggrega i dati con funzioni quali Media, Somma, Conta numeri, Max e Min. Ad esempio, raggruppare i dati per calcolare la somma delle vendite per prodotto o la media giornaliera delle visite."
+              name="GroupBy Continent, Count Correct"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Se si specifica un valore CountDistinctScale, il valore in CountDistinctKeys ha la precedenza."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale di estensione della memoria consentita durante l'aggregazione. I valori validi sono compresi tra 1 e 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\assignment_2\GroupBy Continent, Count Correct.Inputs[Input aggregazione 1]"
+                  name="Input aggregazione 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\GroupBy Continent, Count Correct.Inputs[Input aggregazione 1].Columns[Continent]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="Continent"
+                      lineageId="Package\assignment_2\Continent.Outputs[Output corrispondenza ricerca].Columns[Continent]" />
+                    <inputColumn
+                      refId="Package\assignment_2\GroupBy Continent, Count Correct.Inputs[Input aggregazione 1].Columns[IsCorrect]"
+                      cachedDataType="ui1"
+                      cachedName="IsCorrect"
+                      lineageId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[IsCorrect]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_2\GroupBy Continent, Count Correct.Outputs[Output aggregazione 1]"
+                  name="Output aggregazione 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\GroupBy Continent, Count Correct.Outputs[Output aggregazione 1].Columns[Continent]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\assignment_2\GroupBy Continent, Count Correct.Outputs[Output aggregazione 1].Columns[Continent]"
+                      name="Continent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\assignment_2\Continent.Outputs[Output corrispondenza ricerca].Columns[Continent]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_2\GroupBy Continent, Count Correct.Outputs[Output aggregazione 1].Columns[IsCorrect]"
+                      dataType="ui8"
+                      lineageId="Package\assignment_2\GroupBy Continent, Count Correct.Outputs[Output aggregazione 1].Columns[IsCorrect]"
+                      name="IsCorrect">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[IsCorrect]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_2\Male and Female"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Suddivisione condizionale;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Indirizza righe di dati a output diversi a seconda del contenuto dei dati. Usare le condizioni (espressioni SSIS) per specificare le righe da indirizzare. Ad esempio, separare i record da eliminare da quelli pronti per essere caricati oppure indirizzare unicamente un subset di record."
+              name="Male and Female"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\assignment_2\Male and Female.Inputs[Input suddivisione condizionale]"
+                  description="Input della trasformazione Suddivisione condizionale"
+                  name="Input suddivisione condizionale">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\Male and Female.Inputs[Input suddivisione condizionale].Columns[Gender]"
+                      cachedDataType="ui1"
+                      cachedName="Gender"
+                      lineageId="Package\assignment_2\GeoId, Gender.Outputs[Output corrispondenza ricerca].Columns[Gender]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_2\Male and Female.Outputs[Female]"
+                  description="Output 1 della trasformazione Suddivisione condizionale"
+                  errorOrTruncationOperation="Calcolo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Female"
+                  synchronousInputId="Package\assignment_2\Male and Female.Inputs[Input suddivisione condizionale]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica l'espressione. Questa versione dell'espressione utilizza gli identificatori di derivazione anziché i nomi di colonna."
+                      name="Expression">#{Package\assignment_2\GeoId, Gender.Outputs[Output corrispondenza ricerca].Columns[Gender]} == 1</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica la versione descrittiva dell'espressione. Questa versione dell'espressione utilizza i nomi di colonna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Gender == 1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la posizione della condizione nell'elenco delle condizioni valutate dalla trasformazione. L'ordine di valutazione è crescente, dal valore più basso al più alto."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_2\Male and Female.Outputs[Male]"
+                  description="Output predefinito per la trasformazione Suddivisione condizionale"
+                  exclusionGroup="1"
+                  name="Male"
+                  synchronousInputId="Package\assignment_2\Male and Female.Inputs[Input suddivisione condizionale]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_2\Male and Female.Outputs[Output errori suddivisione condizionale]"
+                  description="Output degli errori per la trasformazione Suddivisione condizionale"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori suddivisione condizionale"
+                  synchronousInputId="Package\assignment_2\Male and Female.Inputs[Input suddivisione condizionale]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\Male and Female.Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\Male and Female.Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_2\Male and Female.Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\Male and Female.Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_2\Merge join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Combina due flussi di dati ordinati in uno solo tramite join di tipo FULL, LEFT o INNER. Questa trasformazione è consigliata quando i flussi di dati possono essere ordinati alle relative origini."
+              name="Merge join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di join da eseguire."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero di colonne nella chiave di ordinamento."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se i valori Null vengono considerati come valori uguali."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indica il numero massimo di buffer richiesti per input prima dell'attivazione del blocco."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\assignment_2\Merge join.Inputs[Input merge join sinistro]"
+                  hasSideEffects="true"
+                  name="Input merge join sinistro">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\Merge join.Inputs[Input merge join sinistro].Columns[Continent]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="Continent"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\assignment_2\Ordino Male.Outputs[Output ordinamento].Columns[Continent]" />
+                    <inputColumn
+                      refId="Package\assignment_2\Merge join.Inputs[Input merge join sinistro].Columns[IsCorrect]"
+                      cachedDataType="ui8"
+                      cachedName="IsCorrect"
+                      lineageId="Package\assignment_2\Ordino Male.Outputs[Output ordinamento].Columns[IsCorrect]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\assignment_2\Merge join.Inputs[Input merge join destro]"
+                  hasSideEffects="true"
+                  name="Input merge join destro">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\Merge join.Inputs[Input merge join destro].Columns[Continent]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="Continent"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\assignment_2\Ordino Female.Outputs[Output ordinamento].Columns[Continent]" />
+                    <inputColumn
+                      refId="Package\assignment_2\Merge join.Inputs[Input merge join destro].Columns[IsCorrect]"
+                      cachedDataType="ui8"
+                      cachedName="IsCorrect"
+                      lineageId="Package\assignment_2\Ordino Female.Outputs[Output ordinamento].Columns[IsCorrect]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_2\Merge join.Outputs[Output merge join]"
+                  isSorted="true"
+                  name="Output merge join">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\Merge join.Outputs[Output merge join].Columns[Continent]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\assignment_2\Merge join.Outputs[Output merge join].Columns[Continent]"
+                      name="Continent"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonna di input associata a questa colonna di output"
+                          name="InputColumnID">#{Package\assignment_2\Merge join.Inputs[Input merge join sinistro].Columns[Continent]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_2\Merge join.Outputs[Output merge join].Columns[IsCorrect_Male]"
+                      dataType="ui8"
+                      lineageId="Package\assignment_2\Merge join.Outputs[Output merge join].Columns[IsCorrect_Male]"
+                      name="IsCorrect_Male">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonna di input associata a questa colonna di output"
+                          name="InputColumnID">#{Package\assignment_2\Merge join.Inputs[Input merge join sinistro].Columns[IsCorrect]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_2\Merge join.Outputs[Output merge join].Columns[IsCorrect_female]"
+                      dataType="ui8"
+                      lineageId="Package\assignment_2\Merge join.Outputs[Output merge join].Columns[IsCorrect_female]"
+                      name="IsCorrect_female">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonna di input associata a questa colonna di output"
+                          name="InputColumnID">#{Package\assignment_2\Merge join.Inputs[Input merge join destro].Columns[IsCorrect]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_2\Ordino Female"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordinamento;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Ordina i dati di input in ordine crescente o decrescente quando non possono essere ordinati come la relativa origine. Ad esempio, ordinare i dati delle vendite per 'customer id' prima che vengano scritti in un file flat e recapitati a un altro reparto. Nota: questa trasformazione non è consigliata per i flussi di dati di grandi dimensioni."
+              name="Ordino Female"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se la trasformazione Ordinamento rimuove le righe con valori di ordinamento duplicati."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero massimo di thread da utilizzare per l'ordinamento."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\assignment_2\Ordino Female.Inputs[Input ordinamento]"
+                  name="Input ordinamento">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\Ordino Female.Inputs[Input ordinamento].Columns[Continent]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="Continent"
+                      lineageId="Package\assignment_2\GroupBy Contient, Count Correct 1.Outputs[Output aggregazione 1].Columns[Continent]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\assignment_2\Ordino Female.Inputs[Input ordinamento].Columns[IsCorrect]"
+                      cachedDataType="ui8"
+                      cachedName="IsCorrect"
+                      lineageId="Package\assignment_2\GroupBy Contient, Count Correct 1.Outputs[Output aggregazione 1].Columns[IsCorrect]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_2\Ordino Female.Outputs[Output ordinamento]"
+                  isSorted="true"
+                  name="Output ordinamento">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\Ordino Female.Outputs[Output ordinamento].Columns[Continent]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\assignment_2\Ordino Female.Outputs[Output ordinamento].Columns[Continent]"
+                      name="Continent"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\assignment_2\GroupBy Contient, Count Correct 1.Outputs[Output aggregazione 1].Columns[Continent]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_2\Ordino Female.Outputs[Output ordinamento].Columns[IsCorrect]"
+                      dataType="ui8"
+                      lineageId="Package\assignment_2\Ordino Female.Outputs[Output ordinamento].Columns[IsCorrect]"
+                      name="IsCorrect">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\assignment_2\GroupBy Contient, Count Correct 1.Outputs[Output aggregazione 1].Columns[IsCorrect]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_2\Ordino Male"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordinamento;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Ordina i dati di input in ordine crescente o decrescente quando non possono essere ordinati come la relativa origine. Ad esempio, ordinare i dati delle vendite per 'customer id' prima che vengano scritti in un file flat e recapitati a un altro reparto. Nota: questa trasformazione non è consigliata per i flussi di dati di grandi dimensioni."
+              name="Ordino Male"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se la trasformazione Ordinamento rimuove le righe con valori di ordinamento duplicati."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero massimo di thread da utilizzare per l'ordinamento."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\assignment_2\Ordino Male.Inputs[Input ordinamento]"
+                  name="Input ordinamento">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\Ordino Male.Inputs[Input ordinamento].Columns[Continent]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="Continent"
+                      lineageId="Package\assignment_2\GroupBy Continent, Count Correct.Outputs[Output aggregazione 1].Columns[Continent]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\assignment_2\Ordino Male.Inputs[Input ordinamento].Columns[IsCorrect]"
+                      cachedDataType="ui8"
+                      cachedName="IsCorrect"
+                      lineageId="Package\assignment_2\GroupBy Continent, Count Correct.Outputs[Output aggregazione 1].Columns[IsCorrect]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_2\Ordino Male.Outputs[Output ordinamento]"
+                  isSorted="true"
+                  name="Output ordinamento">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\Ordino Male.Outputs[Output ordinamento].Columns[Continent]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\assignment_2\Ordino Male.Outputs[Output ordinamento].Columns[Continent]"
+                      name="Continent"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\assignment_2\GroupBy Continent, Count Correct.Outputs[Output aggregazione 1].Columns[Continent]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\assignment_2\Ordino Male.Outputs[Output ordinamento].Columns[IsCorrect]"
+                      dataType="ui8"
+                      lineageId="Package\assignment_2\Ordino Male.Outputs[Output ordinamento].Columns[IsCorrect]"
+                      name="IsCorrect">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\assignment_2\GroupBy Continent, Count Correct.Outputs[Output aggregazione 1].Columns[IsCorrect]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_2\Ratio"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+              name="Ratio"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\assignment_2\Ratio.Inputs[Input colonna derivata]"
+                  description="Input della trasformazione Colonna derivata"
+                  name="Input colonna derivata">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\Ratio.Inputs[Input colonna derivata].Columns[IsCorrect_Male]"
+                      cachedDataType="ui8"
+                      cachedName="IsCorrect_Male"
+                      lineageId="Package\assignment_2\Merge join.Outputs[Output merge join].Columns[IsCorrect_Male]" />
+                    <inputColumn
+                      refId="Package\assignment_2\Ratio.Inputs[Input colonna derivata].Columns[IsCorrect_female]"
+                      cachedDataType="ui8"
+                      cachedName="IsCorrect_female"
+                      lineageId="Package\assignment_2\Merge join.Outputs[Output merge join].Columns[IsCorrect_female]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\assignment_2\Ratio.Outputs[Output colonna derivata]"
+                  description="Output predefinito della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  name="Output colonna derivata"
+                  synchronousInputId="Package\assignment_2\Ratio.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\Ratio.Outputs[Output colonna derivata].Columns[Ratio]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Calcolo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\assignment_2\Ratio.Outputs[Output colonna derivata].Columns[Ratio]"
+                      name="Ratio"
+                      precision="38"
+                      scale="9"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione colonna derivata"
+                          name="Expression">(DT_DECIMAL,5)#{Package\assignment_2\Merge join.Outputs[Output merge join].Columns[IsCorrect_Male]} / (DT_DECIMAL,5)#{Package\assignment_2\Merge join.Outputs[Output merge join].Columns[IsCorrect_female]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione descrittiva colonna derivata"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DECIMAL,5)IsCorrect_Male / (DT_DECIMAL,5)IsCorrect_female</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\assignment_2\Ratio.Outputs[Output errori colonna derivata]"
+                  description="Output degli errori della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori colonna derivata"
+                  synchronousInputId="Package\assignment_2\Ratio.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\Ratio.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\Ratio.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_2\Ratio.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\Ratio.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\assignment_2\Ratio File"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destinazione file flat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Destinazione file flat"
+              localeId="1033"
+              name="Ratio File"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifica se i dati verranno sovrascritti o accodati nel file di destinazione."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il testo da scrivere nel file di destinazione prima della scrittura dei dati."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quando il qualificatore di testo è abilitato, specifica se il qualificatore di testo nei dati scritti nel file di destinazione verrà o meno preceduto da un carattere di escape."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\assignment_2\Ratio File.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat]"
+                  hasSideEffects="true"
+                  name="Input destinazione file flat">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].Columns[Continent]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="Continent"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].ExternalColumns[Continent]"
+                      lineageId="Package\assignment_2\Merge join.Outputs[Output merge join].Columns[Continent]" />
+                    <inputColumn
+                      refId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].Columns[IsCorrect_Male]"
+                      cachedDataType="ui8"
+                      cachedName="IsCorrect_Male"
+                      externalMetadataColumnId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].ExternalColumns[IsCorrect_Male]"
+                      lineageId="Package\assignment_2\Merge join.Outputs[Output merge join].Columns[IsCorrect_Male]" />
+                    <inputColumn
+                      refId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].Columns[IsCorrect_female]"
+                      cachedDataType="ui8"
+                      cachedName="IsCorrect_female"
+                      externalMetadataColumnId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].ExternalColumns[IsCorrect_Female]"
+                      lineageId="Package\assignment_2\Merge join.Outputs[Output merge join].Columns[IsCorrect_female]" />
+                    <inputColumn
+                      refId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].Columns[Ratio]"
+                      cachedDataType="numeric"
+                      cachedName="Ratio"
+                      cachedPrecision="38"
+                      cachedScale="9"
+                      externalMetadataColumnId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].ExternalColumns[Ratio]"
+                      lineageId="Package\assignment_2\Ratio.Outputs[Output colonna derivata].Columns[Ratio]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].ExternalColumns[Continent]"
+                      dataType="wstr"
+                      length="2"
+                      name="Continent" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].ExternalColumns[IsCorrect_Male]"
+                      dataType="ui8"
+                      name="IsCorrect_Male" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].ExternalColumns[IsCorrect_Female]"
+                      dataType="ui8"
+                      name="IsCorrect_Female" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat].ExternalColumns[Ratio]"
+                      dataType="numeric"
+                      name="Ratio"
+                      precision="38"
+                      scale="9" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\assignment_2\Recupero UserId e IsCorrect"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+              description="Origine OLE DB"
+              name="Recupero UserId e IsCorrect"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowset">[Group_21].[Answer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL da eseguire."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variabile che contiene il comando SQL da eseguire."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la modalità utilizzata per accedere al database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mapping tra i parametri nel comando SQL e le variabili."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\assignment_2\Recupero UserId e IsCorrect.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_21_DB.Group_21]"
+                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB]"
+                  name="Output origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[UserId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[UserId]"
+                      lineageId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[UserId]"
+                      name="UserId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[IsCorrect]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[IsCorrect]"
+                      lineageId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].Columns[IsCorrect]"
+                      name="IsCorrect"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[AnswerId]"
+                      dataType="i4"
+                      name="AnswerId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[QuestionId]"
+                      dataType="i4"
+                      name="QuestionId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[UserId]"
+                      dataType="i4"
+                      name="UserId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[OrganizationId]"
+                      dataType="i4"
+                      name="OrganizationId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[DateId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DateId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[SubjectId]"
+                      dataType="i4"
+                      name="SubjectId" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[AnswerValue]"
+                      dataType="ui1"
+                      name="AnswerValue" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[CorrectAnswer]"
+                      dataType="ui1"
+                      name="CorrectAnswer" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[IsCorrect]"
+                      dataType="ui1"
+                      name="IsCorrect" />
+                    <externalMetadataColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB].ExternalColumns[Confidence]"
+                      dataType="ui1"
+                      name="Confidence" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output errori origine OLE DB]"
+                  isErrorOut="true"
+                  name="Output errori origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output errori origine OLE DB].Columns[UserId]"
+                      dataType="i4"
+                      lineageId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output errori origine OLE DB].Columns[UserId]"
+                      name="UserId" />
+                    <outputColumn
+                      refId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output errori origine OLE DB].Columns[IsCorrect]"
+                      dataType="ui1"
+                      lineageId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output errori origine OLE DB].Columns[IsCorrect]"
+                      name="IsCorrect" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\assignment_2.Paths[Correct]"
+              endId="Package\assignment_2\GeoId, Gender.Inputs[Input ricerca]"
+              name="Correct"
+              startId="Package\assignment_2\Correct (1) and No Correct (0).Outputs[Correct]" />
+            <path
+              refId="Package\assignment_2.Paths[Female]"
+              endId="Package\assignment_2\GroupBy Contient, Count Correct 1.Inputs[Input aggregazione 1]"
+              name="Female"
+              startId="Package\assignment_2\Male and Female.Outputs[Female]" />
+            <path
+              refId="Package\assignment_2.Paths[Male]"
+              endId="Package\assignment_2\GroupBy Continent, Count Correct.Inputs[Input aggregazione 1]"
+              name="Male"
+              startId="Package\assignment_2\Male and Female.Outputs[Male]" />
+            <path
+              refId="Package\assignment_2.Paths[Output aggregazione 1]"
+              endId="Package\assignment_2\Ordino Female.Inputs[Input ordinamento]"
+              name="Output aggregazione 1"
+              startId="Package\assignment_2\GroupBy Contient, Count Correct 1.Outputs[Output aggregazione 1]" />
+            <path
+              refId="Package\assignment_2.Paths[Output aggregazione 11]"
+              endId="Package\assignment_2\Ordino Male.Inputs[Input ordinamento]"
+              name="Output aggregazione 1"
+              startId="Package\assignment_2\GroupBy Continent, Count Correct.Outputs[Output aggregazione 1]" />
+            <path
+              refId="Package\assignment_2.Paths[Output colonna derivata]"
+              endId="Package\assignment_2\Ratio File.Inputs[Input destinazione file flat]"
+              name="Output colonna derivata"
+              startId="Package\assignment_2\Ratio.Outputs[Output colonna derivata]" />
+            <path
+              refId="Package\assignment_2.Paths[Output corrispondenza ricerca]"
+              endId="Package\assignment_2\Continent.Inputs[Input ricerca]"
+              name="Output corrispondenza ricerca"
+              startId="Package\assignment_2\GeoId, Gender.Outputs[Output corrispondenza ricerca]" />
+            <path
+              refId="Package\assignment_2.Paths[Output corrispondenza ricerca1]"
+              endId="Package\assignment_2\Male and Female.Inputs[Input suddivisione condizionale]"
+              name="Output corrispondenza ricerca"
+              startId="Package\assignment_2\Continent.Outputs[Output corrispondenza ricerca]" />
+            <path
+              refId="Package\assignment_2.Paths[Output merge join]"
+              endId="Package\assignment_2\Ratio.Inputs[Input colonna derivata]"
+              name="Output merge join"
+              startId="Package\assignment_2\Merge join.Outputs[Output merge join]" />
+            <path
+              refId="Package\assignment_2.Paths[Output ordinamento]"
+              endId="Package\assignment_2\Merge join.Inputs[Input merge join sinistro]"
+              name="Output ordinamento"
+              startId="Package\assignment_2\Ordino Male.Outputs[Output ordinamento]" />
+            <path
+              refId="Package\assignment_2.Paths[Output ordinamento1]"
+              endId="Package\assignment_2\Merge join.Inputs[Input merge join destro]"
+              name="Output ordinamento"
+              startId="Package\assignment_2\Ordino Female.Outputs[Output ordinamento]" />
+            <path
+              refId="Package\assignment_2.Paths[Output origine OLE DB]"
+              endId="Package\assignment_2\Correct (1) and No Correct (0).Inputs[Input suddivisione condizionale]"
+              name="Output origine OLE DB"
+              startId="Package\assignment_2\Recupero UserId e IsCorrect.Outputs[Output origine OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\assignment_2"
+          TopLeft="310.000005279269,31.3529416161838" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\assignment_2">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\assignment_2\Male and Female"
+          TopLeft="292.142861096227,197.918982848117" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\assignment_2\Ordino Female"
+          TopLeft="407.857148270218,368.958825760152" />
+        <NodeLayout
+          Size="221.6,41.6"
+          Id="Package\assignment_2\Correct (1) and No Correct (0)"
+          TopLeft="437.857150313806,48.9176475092614" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\assignment_2\GeoId, Gender"
+          TopLeft="91.6428567536023,132.029412697756" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\assignment_2\GroupBy Continent, Count Correct"
+          TopLeft="60,288.852942345465" />
+        <NodeLayout
+          Size="212,41.6"
+          Id="Package\assignment_2\Recupero UserId e IsCorrect"
+          TopLeft="91.1428568387512,46.2352939246023" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\assignment_2\Ordino Male"
+          TopLeft="147.857144353341,366.617648420862" />
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\assignment_2\GroupBy Contient, Count Correct 1"
+          TopLeft="423.571434763013,291.382355407861" />
+        <NodeLayout
+          Size="124,41.6"
+          Id="Package\assignment_2\Continent"
+          TopLeft="515.928577753962,131.44117697465" />
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Output origine OLE DB]"
+          TopLeft="303.142856838751,68.3764707169318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="134.714293475054,0"
+              Start="0,0"
+              End="127.214293475054,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="127.214293475054,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Output corrispondenza ricerca1]"
+          TopLeft="577.928577753962,173.04117697465">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-206.585716657736,24.8778058734666"
+              Start="0,0"
+              End="-206.585716657736,17.3778058734666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.43890293673329" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.43890293673329"
+                    Point2="0,12.4389029367333"
+                    Point3="-4,12.4389029367333" />
+                  <mssgle:LineSegment
+                    End="-202.585716657736,12.4389029367333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-202.585716657736,12.4389029367333"
+                    Point2="-206.585716657736,12.4389029367333"
+                    Point3="-206.585716657736,16.4389029367333" />
+                  <mssgle:LineSegment
+                    End="-206.585716657736,17.3778058734666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-170.078737235118,17.4389029367333,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Output corrispondenza ricerca]"
+          TopLeft="238.842856753602,152.535294836203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="277.08572100036,0"
+              Start="0,0"
+              End="269.58572100036,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="269.58572100036,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="68.00698159393,5,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Output aggregazione 11]"
+          TopLeft="179.2,330.452942345465">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.257144353341,36.1647060753969"
+              Start="0,0"
+              End="36.257144353341,28.6647060753969">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.0823530376985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.0823530376985"
+                    Point2="0,18.0823530376985"
+                    Point3="4,18.0823530376985" />
+                  <mssgle:LineSegment
+                    End="32.257144353341,18.0823530376985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.257144353341,18.0823530376985"
+                    Point2="36.257144353341,18.0823530376985"
+                    Point3="36.257144353341,22.0823530376985" />
+                  <mssgle:LineSegment
+                    End="36.257144353341,28.6647060753969" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Output aggregazione 1]"
+          TopLeft="544.371434763013,332.982355407861">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-62.9142864927953,35.9764703522912"
+              Start="0,0"
+              End="-62.9142864927953,28.4764703522912">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.9882351761456" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.9882351761456"
+                    Point2="0,17.9882351761456"
+                    Point3="-4,17.9882351761456" />
+                  <mssgle:LineSegment
+                    End="-58.9142864927953,17.9882351761456" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58.9142864927953,17.9882351761456"
+                    Point2="-62.9142864927953,17.9882351761456"
+                    Point3="-62.9142864927953,21.9882351761456" />
+                  <mssgle:LineSegment
+                    End="-62.9142864927953,28.4764703522912" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Male]"
+          TopLeft="346.27619442956,239.518982848117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-167.07619442956,49.3339594973481"
+              Start="0,0"
+              End="-167.07619442956,41.8339594973481">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.0295875559233" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.0295875559233"
+                    Point2="0,20.0295875559233"
+                    Point3="-4,20.0295875559233" />
+                  <mssgle:LineSegment
+                    End="-163.07619442956,20.0295875559233" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-163.07619442956,20.0295875559233"
+                    Point2="-167.07619442956,20.0295875559233"
+                    Point3="-167.07619442956,24.0295875559233" />
+                  <mssgle:LineSegment
+                    End="-167.07619442956,41.8339594973481" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.29444487103,25.0295875559233,21.5126953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Female]"
+          TopLeft="396.409527762893,239.518982848117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="147.96190700012,51.8633725597442"
+              Start="0,0"
+              End="147.96190700012,44.3633725597442">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.0565292592562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.0565292592562"
+                    Point2="0,21.0565292592562"
+                    Point3="4,21.0565292592562" />
+                  <mssgle:LineSegment
+                    End="143.96190700012,21.0565292592562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="143.96190700012,21.0565292592562"
+                    Point2="147.96190700012,21.0565292592562"
+                    Point3="147.96190700012,25.0565292592562" />
+                  <mssgle:LineSegment
+                    End="147.96190700012,44.3633725597442" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="57.64460584381,26.0565292592562,32.6726953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Correct]"
+          TopLeft="548.657150313806,90.5176475092614">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-383.414293560203,41.5117651884946"
+              Start="0,0"
+              End="-383.414293560203,34.0117651884946">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7558825942473" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.7558825942473"
+                    Point2="0,20.7558825942473"
+                    Point3="-4,20.7558825942473" />
+                  <mssgle:LineSegment
+                    End="-379.414293560203,20.7558825942473" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-379.414293560203,20.7558825942473"
+                    Point2="-383.414293560203,20.7558825942473"
+                    Point3="-383.414293560203,24.7558825942473" />
+                  <mssgle:LineSegment
+                    End="-383.414293560203,34.0117651884946" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-208.466053030102,25.7558825942473,33.5178125,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="128,41.6"
+          Id="Package\assignment_2\Merge join"
+          TopLeft="285.000004853521,460.082357048741" />
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Output ordinamento]"
+          TopLeft="215.457144353341,408.217648420862">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="113.54286050018,51.8647086278789"
+              Start="0,0"
+              End="113.54286050018,44.3647086278789">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.7346421498542" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.7346421498542"
+                    Point2="0,30.7346421498542"
+                    Point3="4,30.7346421498542" />
+                  <mssgle:LineSegment
+                    End="109.54286050018,30.7346421498542" />
+                  <mssgle:CubicBezierSegment
+                    Point1="109.54286050018,30.7346421498542"
+                    Point2="113.54286050018,30.7346421498542"
+                    Point3="113.54286050018,34.7346421498542" />
+                  <mssgle:LineSegment
+                    End="113.54286050018,44.3647086278789" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Output ordinamento1]"
+          TopLeft="481.457148270218,410.558825760152">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-112.457143416697,49.5235312885889"
+              Start="0,0"
+              End="-112.457143416697,42.0235312885889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.3472778006452" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.3472778006452"
+                    Point2="0,29.3472778006452"
+                    Point3="-4,29.3472778006452" />
+                  <mssgle:LineSegment
+                    End="-108.457143416697,29.3472778006452" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-108.457143416697,29.3472778006452"
+                    Point2="-112.457143416697,29.3472778006452"
+                    Point3="-112.457143416697,33.3472778006452" />
+                  <mssgle:LineSegment
+                    End="-112.457143416697,42.0235312885889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="102.4,41.6"
+          Id="Package\assignment_2\Ratio"
+          TopLeft="296.42857647672,555.105886514129" />
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Output merge join]"
+          TopLeft="348.314290665121,501.682357048741">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.4235294653884"
+              Start="0,0"
+              End="0,45.9235294653884">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.9235294653884" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121.6,41.6"
+          Id="Package\assignment_2\Ratio File"
+          TopLeft="287.142862032871,641.858827583353" />
+        <EdgeLayout
+          Id="Package\assignment_2.Paths[Output colonna derivata]"
+          TopLeft="347.785719254795,596.705886514129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.1529410692233"
+              Start="0,0"
+              End="0,37.6529410692233">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.6529410692233" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\assignment_2\Recupero UserId e IsCorrect">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\assignment_2\GeoId, Gender">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_21].[user1]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\assignment_2\Continent">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_21].[Geography]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

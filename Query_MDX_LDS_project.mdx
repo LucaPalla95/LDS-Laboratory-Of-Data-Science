@@ -1,0 +1,88 @@
+--- ASSIGNMENT 1
+
+with set answer_year as
+{[Date].[DayMonthQuarterYear].[Year].&[2019],
+[Date].[DayMonthQuarterYear].[Year].&[2020]}
+
+member difference_prev as
+case
+when IsEmpty(([Date].[DayMonthQuarterYear].currentmember, [Measures].[Is Correct])) then 'no ans Year'
+when IsEmpty(([Date].[DayMonthQuarterYear].prevmember, [Measures].[Is Correct])) then 'no ans Year-1'
+when (([Date].[DayMonthQuarterYear].currentmember, [Measures].[Is Correct]) -
+([Date].[DayMonthQuarterYear].prevmember, [Measures].[Is Correct])) = 0 then 0
+else (([Date].[DayMonthQuarterYear].currentmember, [Measures].[Is Correct])-
+([Date].[DayMonthQuarterYear].prevmember, [Measures].[Is Correct]))/
+([Date].[DayMonthQuarterYear].prevmember, [Measures].[Is Correct]) end,
+FORMAT_STRING ="Percent"
+
+select difference_prev on columns,
+(answer_year, [User1].[User Id].[User Id]) on rows
+from answer;
+
+--- ASSIGNMENT 1.1
+
+with member difference_prev_1 as
+case
+when IsEmpty(([Date].[DayMonthQuarterYear].currentmember, [Measures].[Is Correct])) then 'no ans Year'
+when IsEmpty(([Date].[DayMonthQuarterYear].lag(1), [Measures].[Is Correct])) then 'no ans Year-1'
+when (([Date].[DayMonthQuarterYear].currentmember, [Measures].[Is Correct]) -
+([Date].[DayMonthQuarterYear].lag(1), [Measures].[Is Correct])) = 0 then 0
+else (([Date].[DayMonthQuarterYear].currentmember, [Measures].[Is Correct])-
+([Date].[DayMonthQuarterYear].lag(1), [Measures].[Is Correct]))/
+([Date].[DayMonthQuarterYear].lag(1), [Measures].[Is Correct]) end,
+FORMAT_STRING ="Percent"
+
+select difference_prev_1 on columns,
+nonempty(([Date].[DayMonthQuarterYear].[Year], [User1].[User Id].[User Id])) on rows
+from answer;
+
+--- ASSIGNMENT 1.2
+
+with member difference_prev_2 as
+case
+when IsEmpty(([Date].[DayMonthQuarterYear].[Year].&[2020], [Measures].[Is Correct])) then 'no ans 2020'
+when IsEmpty(([Date].[DayMonthQuarterYear].[Year].&[2019], [Measures].[Is Correct])) then 'no ans 2019'
+when (([Date].[DayMonthQuarterYear].[Year].&[2020], [Measures].[Is Correct]) -
+([Date].[DayMonthQuarterYear].[Year].&[2019], [Measures].[Is Correct])) = 0 then 0
+else (([Date].[DayMonthQuarterYear].[Year].&[2020], [Measures].[Is Correct])-
+([Date].[DayMonthQuarterYear].[Year].&[2019], [Measures].[Is Correct]))/
+([Date].[DayMonthQuarterYear].[Year].&[2019], [Measures].[Is Correct]) end,
+FORMAT_STRING ="Percent"
+
+select difference_prev_2 on columns,
+nonempty([User1].[User Id].[User Id]) on rows
+from answer;
+
+--- ASSIGNMENT 2
+
+with member  tot_answer_subj as
+([Subject].[Subject Id], [Measures].[Conteggio di Answer])
+member ratio as
+case
+when tot_answer_subj = 0 then 'no answer'
+else [Measures].[Is Correct]/tot_answer_subj end,
+FORMAT_STRING = "Percent"
+
+select {[Measures].[Is Correct], tot_answer_subj, ratio} on columns,
+[Subject].[Subject Id].[Subject Id] on rows
+from answer;
+
+--- ASSIGNMENT 3
+with member avg_incor_cont AS
+(([User1].[Continent], [User1].[User Id].[All], [Measures].[Is Incorrect])/([User1].[Continent], [User1].[User Id].[All], [Measures].[Conteggio di Answer]))
+
+member thresold_incor As
+avg_incor_cont * ([Measures].[Conteggio di Answer])
+
+select {[Measures].[Conteggio di Answer], [Measures].[Is Incorrect], thresold_incor, avg_incor_cont } ON columns,
+filter(([User1].[RegionCountryContinent].[Continent], [User1].[User Id].[User Id]), [Measures].[Is Incorrect] >= thresold_incor) ON rows
+from answer;
+
+-- ASSIGNMENT 3.1
+with member avg_incor_cont AS
+(([User1].[Continent], [User1].[User Id].[All], [Measures].[Is Incorrect])/([User1].[Continent], [User1].[User Id].[All], [Measures].[Conteggio di User1]))
+
+select {[Measures].[Is Incorrect], avg_incor_cont} ON columns,
+filter(([User1].[RegionCountryContinent].[Continent], [User1].[User Id].[User Id]), [Measures].[Is Incorrect] >= avg_incor_cont) ON rows
+from answer;
+
